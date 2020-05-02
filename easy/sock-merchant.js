@@ -13,24 +13,23 @@ Sample Input
 // Complete the sockMerchant function below.
 function sockMerchant(n, ar) {
   const counts = ar.reduce((acc, curr) => {
-   if(acc[curr]) {
-       acc[curr] += 1;
-   } else {
-       acc[curr] =1;
-   }
+    if (acc[curr]) {
+      acc[curr] += 1;
+    } else {
+      acc[curr] = 1;
+    }
 
-   return acc;
+    return acc;
   }, {});
 
-  
   let result = 0;
   let item;
 
   Object.keys(counts).forEach((key) => {
-      item = counts[key];
-      if(item > 1) {
-        result += (Math.floor(item / 2));
-      }
+    item = counts[key];
+    if (item > 1) {
+      result += Math.floor(item / 2);
+    }
   });
 
   return result;
